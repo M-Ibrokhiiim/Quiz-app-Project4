@@ -39,6 +39,7 @@ main{
     margin: 0 auto;
     width: 85%;
     height: 100%;
+    /* background-color: aqua; */
     margin-top: -2.4vw;
 }
 
@@ -85,7 +86,7 @@ main{
 
 
 .next-btn-section{
-    height: 40px;
+     height: 40px;
     text-align: center;
     padding: 20px;
     margin-top: -20px;
@@ -111,7 +112,7 @@ main{
 .next-btn:active{
     background-color:  rgb(18, 18, 73);
     transition: all;
-    transition-delay: 0.01s;
-    transition-duration: 0.01s;
+    transition-delay: 0.1s;
+    transition-duration: 0.1s;
     transform: translateX(10px);
 }

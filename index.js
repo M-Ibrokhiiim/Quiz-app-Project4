@@ -1,50 +1,64 @@
 const questions=[
     {
         question:"1.What is the largest animal in the World?",
-        anwer:
-        [
-         {text:"Whale", correct:true},
-         {text:"Shark",correct:false},
-         {text:"Camel",correct:false},
-         {text:"NorTuya", correct:false}
-        ]
+        options:["Whale","Shark","Camel","Nortuya"],
+        correctAswer:"Whale"
     },
     {
         question:"2.Which  country is the largest  in the world?",
-        anwer:
-        [
-         {text:"China", correct:true},
-         {text:"Russia",correct:false},
-         {text:"The USA",correct:false},
-         {text:"Georgia", correct:false}
-        ]
+        options:["China","Russia","The USA","Georgia"],
+        correctAswer:"China"
     },
     {
         question:"3.Where lives chinese people ?",
-        anwer:
-        [
-         {text:"Chimgan",correct:false},
-         {text:"China",correct:true},
-         {text:"Norway",correct:false},
-         {text:"United Kingdom",correct:false}
-        ]
+        options:["Chimgan","China","Norway","United Kingdom"],
+        correctAswer:"China"
     }
 ]
 
-let UI=''
-questions.forEach(question=>{
-    UI+=`
-     <h6 class="quiz-section-quiz">${question.question}</h6>
 
-        <div class="quiz-section-option-div">
-          <button class="options">Vatican</button>
-          <button class="options">China</button>
-          <button class="options">Bali</button>
-          <button class="options">Vietnam</button>
-        </div>
-    `    
+// Buttons
+
+const nextBtn=document.getElementById('nextBtn')
+const stratBtn=document.getElementById('startBtn')
+
+
+// UI give questions function
+function startBtn(){
+    
+let UI=''
+   
+questions.forEach(quiz=>{
+//    UI= 
+//    `
+//    <h6 class="quiz-section-quiz">${quiz.question}</h6>
+//         <div class="quiz-section-option-div">
+//              <button class="options"> Option1</button>
+//              <button class="options">China</button>
+//              <button class="options">Bali</button>
+//              <button class="options">Vietnam</button>
+//         </div>
+//    `
+   
+console.log(quiz.options.forEach(a=>{
+    console.log(a);
+    
+}));
+
+
+
 })
 
 const appealToUIelements=document.getElementById('quiz-sectionId')
 appealToUIelements.innerHTML=UI
-console.log(appealToUIelements);
+
+
+
+
+
+
+// Buttons hiding and showing
+stratBtn.style.display="none"
+nextBtn.style.display="block"
+}
+ 
