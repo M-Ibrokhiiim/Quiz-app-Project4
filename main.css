@@ -10,7 +10,7 @@ body{
 main{
     margin: 0 auto;
     align-items: center;
-    width: 40%;
+    width: 30%;
     height: 50%;
     background-color: white;
     margin-top: 20vh;
@@ -38,7 +38,7 @@ main{
     margin: 0 auto;
     width: 85%;
     height: 100%;
-    background-color: aqua;
+    /* background-color: aqua; */
     margin-top: -2.4vw;
 }
 
@@ -50,22 +50,36 @@ main{
 }
 .quiz-section-option-div{
     margin-top: -3vw;
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     gap: 2vh;
 }
 
 .options{
-    border-radius: 4px;
-    background-color: white;
-    border-color: rgb(33, 33, 115);
-    height: 2vw;
+    display: block;
+    height: 2.5vw;
+    margin-bottom: 15px;
+    width: 100%;
     text-align: left;
-    font-size: 2vh;
-    font-family: sans-serif;
-    padding: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 800;
+    font-size: 1vw;
     display: flex;
     align-items: center;
-
+    border: 1.7px solid rgb(29, 179, 179);
+    border-radius: 4px;
 }
+.options:hover{
+    background-color: black;
+    color: white;
+}
+
+
+.options:focus{
+    background-color: rgb(115, 96, 70);
+    border: 1px black solid;
+    color: white;
+}
+
+
 
