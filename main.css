@@ -39,7 +39,6 @@ main{
     margin: 0 auto;
     width: 85%;
     height: 100%;
-    /* background-color: aqua; */
     margin-top: -2.4vw;
 }
 
@@ -51,7 +50,6 @@ main{
 }
 .quiz-section-option-div{
     margin-top: -2vw;
-    /* display: flex; */
     flex-direction: column;
     gap: 2vh;
 }
@@ -104,7 +102,6 @@ main{
     height: calc(2.4vw);
     border-radius: 4px;
     margin-top: 10px;
-    /* box-shadow: 1px 1px 11px 3px blue; */
 }
 
 .next-btn:hover{
