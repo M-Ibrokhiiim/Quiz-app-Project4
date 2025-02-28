@@ -26,38 +26,22 @@ const stratBtn=document.getElementById('startBtn')
 // UI give questions function
 function startBtn(){
     
-let UI=''
-   
-questions.forEach(quiz=>{
-//    UI= 
-//    `
-//    <h6 class="quiz-section-quiz">${quiz.question}</h6>
-//         <div class="quiz-section-option-div">
-//              <button class="options"> Option1</button>
-//              <button class="options">China</button>
-//              <button class="options">Bali</button>
-//              <button class="options">Vietnam</button>
-//         </div>
-//    `
-   
-console.log(quiz.options.forEach(a=>{
-    console.log(a);
-    
-}));
-
-
-
-})
+let UI=`
+     <h6 class="quiz-section-quiz">Quiz</h6>
+        <div class="quiz-section-option-div">
+          <button class="options"> Option1</button>
+          <button class="options">China</button>
+          <button class="options">Bali</button>
+          <button class="options">Vietnam</button>
+        </div>
+  `
 
 const appealToUIelements=document.getElementById('quiz-sectionId')
 appealToUIelements.innerHTML=UI
 
 
-
-
-
-
 // Buttons hiding and showing
+
 stratBtn.style.display="none"
 nextBtn.style.display="block"
 }
