@@ -24,25 +24,49 @@ const stratBtn=document.getElementById('startBtn')
 
 
 // UI give questions function
+
+let nextQuiz=0  
+let orderOfJson=0
+
+function previousQuiz1(){
+
+let increasing=nextQuiz++
+orderOfJson=increasing
+    return nextQuiz
+}
+
+console.log(orderOfJson);
+previousQuiz1()
+// nextBtn.addEventListener("click",previousQuiz1())
+
+let existQuiz=questions[nextQuiz]
+console.log(existQuiz);
+
+
 function startBtn(){
-    
-let UI=`
-     <h6 class="quiz-section-quiz">Quiz</h6>
-        <div class="quiz-section-option-div">
-          <button class="options"> Option1</button>
-          <button class="options">China</button>
-          <button class="options">Bali</button>
-          <button class="options">Vietnam</button>
-        </div>
-  `
-
-const appealToUIelements=document.getElementById('quiz-sectionId')
-appealToUIelements.innerHTML=UI
-
-
 // Buttons hiding and showing
 
 stratBtn.style.display="none"
 nextBtn.style.display="block"
+
+
+let UI=`
+     <h6 class="quiz-section-quiz"> ${existQuiz.question}</h6>
+        <div class="quiz-section-option-div">
+          <button class="options"> ${existQuiz.options[0]}</button>
+          <button class="options">${existQuiz.options[1]}</button>
+          <button class="options">${existQuiz.options[2]}</button>
+          <button class="options">${existQuiz.options[3]}</button>
+        </div>
+  `
+    
+
+const appealToUIelements=document.getElementById('quiz-sectionId')
+appealToUIelements.innerHTML=UI
+
 }
+
+
+
+
  
