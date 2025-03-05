@@ -27,19 +27,22 @@ const stratBtn=document.getElementById('startBtn')
 
 let nextQuiz=0  
 let orderOfJson=0
-
-function previousQuiz1(){
-
-let increasing=nextQuiz++
-orderOfJson=increasing
-    return nextQuiz
-}
+console.log(orderOfJson);
+ 
 
 console.log(orderOfJson);
-previousQuiz1()
-// nextBtn.addEventListener("click",previousQuiz1())
+// previousQuiz1()
+nextBtn.addEventListener("click",function previousQuiz1(){
+                
+     let increasing=nextQuiz++
+     
+    orderOfJson=increasing
+    console.log(orderOfJson);
+    
+    return orderOfJson
+})
 
-let existQuiz=questions[nextQuiz]
+let existQuiz=questions[orderOfJson]
 console.log(existQuiz);
 
 
