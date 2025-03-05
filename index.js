@@ -15,13 +15,13 @@ const questions=[
         correctAswer:"China"
     },
     {
-        question:"4.Where lives chinese people ?",
-        options:["Chimgan","China","Norway","United Kingdom"],
+        question:"4.Where  located chinese people of location ?",
+        options:["Chimgan"," North China","Norway","United Kingdom"],
         correctAswer:"China"
     },
     {
-        question:"5.Where lives chinese people ?",
-        options:["Chimgan","China","Norway","United Kingdom"],
+        question:"5.Where lives uygur people ?",
+        options:["Chimgan","Uyguriston","Norway","United Kingdom"],
         correctAswer:"China"
     }
 ]
@@ -40,33 +40,41 @@ let orderOfJson=0
 let existQuiz=questions[0]
 
 
-// previousQuiz1()
+let overallScore=0
+
+
+// nextButton process
 nextBtn.addEventListener("click",function previousQuiz1(){                
        
        let orderOfQuiz=nextQuiz++
        let existQuiz=questions[orderOfQuiz]
+
+       if(orderOfQuiz===5){
+        alert('Stop!')
+        return
+       }
        let UI=`
         <h6 class="quiz-section-quiz"> ${existQuiz.question}</h6>
            <div class="quiz-section-option-div">
-             <button class="options"> ${existQuiz.options[0]}</button>
+             <button class="options" > ${existQuiz.options[0]}</button>
              <button class="options">${existQuiz.options[1]}</button>
              <button class="options">${existQuiz.options[2]}</button>
              <button class="options">${existQuiz.options[3]}</button>
            </div>
      `
-    
-    
+        
        const appealToUIelements=document.getElementById('quiz-sectionId')
        appealToUIelements.innerHTML=UI
+       
+    //  Choosing answers function()
+    
        
        return orderOfJson
     })
 
 
-
-
+// Entrance of App
 function startBtn(){
-// Buttons hiding and showing
 
 stratBtn.style.display="none"
 nextBtn.style.display="block"
@@ -93,3 +101,28 @@ let UI=`
 
 
 
+
+// const appealToBtnContainer=document.getElementById('quiz-sectionId')
+// appealToBtnContainer.addEventListener('click',(event)=>{
+
+//  if(event.target.classList.contains('options'))
+//    const appealToParentElement=event.target.parentElement
+//    const btnText=appealToParentElement.querySelector('options').textContent
+//    console.log(btnText);
+   
+// })
+
+
+
+const buttons=document.querySelectorAll(' .quiz-section-option-div .options')
+
+
+buttons.forEach(button=>{
+    button.addEventListener('click',function(){
+         console.log(button.textContent.trim());
+         
+    })
+})
+
+
+ 
