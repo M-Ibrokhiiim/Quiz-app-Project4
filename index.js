@@ -117,12 +117,16 @@ let UI=`
 const buttons=document.querySelectorAll(' .quiz-section-option-div .options')
 
 
-buttons.forEach(button=>{
-    button.addEventListener('click',function(){
-         console.log(button.textContent.trim());
-         
-    })
-})
-
 
  
+const quizSection = document.getElementById('quiz-sectionId');
+
+quizSection.addEventListener('click', (event) => {
+
+    
+    if (event.target.classList.contains('options')) {
+        let btnValue=event.target.textContent.trim()
+         if(btnValue===questions){}
+        
+    }
+});
