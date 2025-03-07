@@ -2,30 +2,27 @@ const questions=[
     {
         question:"1.What is the largest animal in the World?",
         options:["Whale","Shark","Camel","Nortuya"],
-        correctAswer:"Whale"
     },
     {
         question:"2.Which  country is the largest  in the world?",
-        options:["China","Russia","The USA","Georgia"],
-        correctAswer:"China"
+        options:["China","Russia","The USA","Georgia"]
     },
     {
         question:"3.Where lives chinese people ?",
-        options:["Chimgan","China","Norway","United Kingdom"],
-        correctAswer:"China"
+        options:["Chimgan","China","Norway","United Kingdom"]
     },
     {
         question:"4.Where  located chinese people of location ?",
-        options:["Chimgan"," North China","Norway","United Kingdom"],
-        correctAswer:"China"
+        options:["Chimgan"," North China","Norway","United Kingdom"]
     },
     {
         question:"5.Where lives uygur people ?",
-        options:["Chimgan","Uyguriston","Norway","United Kingdom"],
-        correctAswer:"China"
+        options:["Chimgan","Uyguriston","Norway","United Kingdom"]
     }
 ]
 
+
+const answers=["Whale","China","China","China","Uyguriston"]
 
 // Buttons
 
@@ -54,8 +51,15 @@ nextBtn.addEventListener("click",function previousQuiz1(){
        if(orderOfQuiz===5){
         appealToUIelements.innerHTML=''
         nextBtn.style.display="none"
+
+        for(let i=0; i < choseAnswers.length; i++){
+            if(choseAnswers[i]===answers[i]){
+                overallScore++
+            }
+        }
+        console.log(overallScore);
         
-        return
+        return overallScore
        }
        
         UI=`
@@ -149,3 +153,4 @@ quizSection.addEventListener('click', (event) => {
 
 console.log(choseAnswers);
 
+console.log(overallScore);
