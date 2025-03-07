@@ -31,7 +31,8 @@ const questions=[
 
 const nextBtn=document.getElementById('nextBtn')
 const stratBtn=document.getElementById('startBtn')
-
+const appealToUIelements=document.getElementById('quiz-sectionId')
+ 
 
 // UI give questions function
 
@@ -39,7 +40,8 @@ let nextQuiz=1
 let orderOfJson=0
 let existQuiz=questions[0]
 
-
+// Scores
+let choseAnswers=[]
 let overallScore=0
 
 
@@ -48,12 +50,17 @@ nextBtn.addEventListener("click",function previousQuiz1(){
        
        let orderOfQuiz=nextQuiz++
        let existQuiz=questions[orderOfQuiz]
-
+       let UI=''
        if(orderOfQuiz===5){
-        alert('Stop!')
+        appealToUIelements.innerHTML=''
+        nextBtn.style.display="none"
+        
         return
        }
-       let UI=`
+       
+        UI=`
+        <div id="quizPlace">
+
         <h6 class="quiz-section-quiz"> ${existQuiz.question}</h6>
            <div class="quiz-section-option-div">
              <button class="options" > ${existQuiz.options[0]}</button>
@@ -61,9 +68,13 @@ nextBtn.addEventListener("click",function previousQuiz1(){
              <button class="options">${existQuiz.options[2]}</button>
              <button class="options">${existQuiz.options[3]}</button>
            </div>
-     `
         
-       const appealToUIelements=document.getElementById('quiz-sectionId')
+        </div>
+
+        
+     `
+         
+       
        appealToUIelements.innerHTML=UI
        
     //  Choosing answers function()
@@ -121,12 +132,20 @@ const buttons=document.querySelectorAll(' .quiz-section-option-div .options')
  
 const quizSection = document.getElementById('quiz-sectionId');
 
+let valOfButton=''
+
 quizSection.addEventListener('click', (event) => {
 
-    
-    if (event.target.classList.contains('options')) {
+
+    if (event.target.classList.contains('options')){
         let btnValue=event.target.textContent.trim()
-         if(btnValue===questions){}
+        valOfButton+=btnValue
         
+        choseAnswers.push(valOfButton)
+        valOfButton=''
+        return valOfButton
     }
 });
+
+console.log(choseAnswers);
+
